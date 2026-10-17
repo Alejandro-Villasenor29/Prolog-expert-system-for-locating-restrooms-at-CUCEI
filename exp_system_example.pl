@@ -6,20 +6,27 @@ iniciar:-
     write('---- Recomendador de ba\xF1\os en CUCEI ----'),nl,
     write('Responde a las preguntas con "si." o con "no." para poder recomendarte un ba\xF1\o '),nl,
     write('----------------------------------'),nl,
-    analisis(A),
-    write(A),
+    analisis(_),
     cerrar.
 
-% Enfermedades
-analisis(bano_modulo_alfa):- bano_modulo_alfa, !.
-analisis(bano_modulo_beta):- bano_modulo_beta, !.
-analisis(bano_biblioteca)  :- bano_biblioteca, !.
+% Ba\xF1\os
+analisis(bano_modulo_alfa)                    :- bano_modulo_alfa, !.
+analisis(bano_modulo_beta)                    :- bano_modulo_beta, !.
+analisis(bano_biblioteca)                     :- bano_biblioteca, !.
 analisis(bano_auditorio_enrique_diaz_de_leon) :- bano_auditorio_enrique_diaz_de_leon, !.
-analisis(bano_proulex_A_mano_derecha)  :- bano_proulex_A_mano_derecha, !.
-analisis(bano_auditorio_antonio_rodriguez) :- bano_auditorio_antonio_rodriguez, !.
-analisis(bano_mano_derecha_modulo_e)     :- bano_mano_derecha_modulo_e, !.
-analisis(bano_modulo_i)   :- bano_modulo_i, !.
-analisis(haste_aqui_mismo):- haste_aqui_mismo, !.
+analisis(bano_proulex_A_mano_derecha)         :- bano_proulex_A_mano_derecha, !.
+analisis(bano_auditorio_antonio_rodriguez)    :- bano_auditorio_antonio_rodriguez, !.
+analisis(bano_mano_derecha_modulo_e)          :- bano_mano_derecha_modulo_e, !.
+analisis(bano_modulo_i)                       :- bano_modulo_i, !.
+analisis(bano_modulo_o)                       :- bano_modulo_o, !.
+analisis(bano_modulo_y)                       :- bano_modulo_y, !.
+analisis(bano_modulo_z)                       :- bano_modulo_z, !.
+analisis(bano_modulo_z1)                      :- bano_modulo_z1, !.
+analisis(bano_frente_al_modulo_v2)            :- bano_frente_al_modulo_v2, !.
+analisis(bano_modulo_v)                       :- bano_modulo_v, !.
+analisis(bano_modulo_x_abajo)                 :- bano_modulo_x_abajo, !.
+analisis(bano_modulo_x_arriba)                :- bano_modulo_x_arriba, !.
+analisis(haste_aqui_mismo)                    :- haste_aqui_mismo, !.
 
 % Reglas de identificación
 bano_modulo_alfa :-
@@ -72,6 +79,57 @@ bano_mano_derecha_modulo_e :-
 bano_modulo_i :-
     verificar('Estas cerca del modulo I'),
     write('Te recomiendo ir al ba\xF1\o del modulo I.'), nl.
+
+bano_modulo_o :-
+    verificar('Te importa que el ba\xF1\o este limpio'),
+    verificar('Te importa que el ba\xF1\o tenga buenos insumos (papel de ba\xF1\o y jabon)'),
+    verificar('Estas cerca del modulo O'),
+    write('Te recomiendo ir al ba\xF1\o del modulo O.'), nl.
+
+bano_modulo_y :-
+    verificar('Te importa que el ba\xF1\o este limpio'),
+    verificar('Te importa que el ba\xF1\o tenga buenos insumos (papel de ba\xF1\o y jabon)'),
+    verificar('Te importa la disponibilidad (si normalmente esta abierto)'),
+    verificar('Estas cerca del modulo Y'),
+    write('Te recomiendo ir al ba\xF1\o del modulo Y.'), nl.
+
+bano_modulo_z :-
+    verificar('Te importa que el ba\xF1\o este limpio'),
+    verificar('Te importa que el ba\xF1\o tenga buena infraestructura (que el piso y los asientos no esten rotos)'),
+    verificar('Te importa la disponibilidad (si normalmente esta abierto)'),
+    verificar('Estas cerca del modulo Z'),
+    write('Te recomiendo ir al ba\xF1\o del modulo Z.'), nl.
+    
+bano_modulo_z1 :-
+    verificar('Te importa que el ba\xF1\o este limpio'),
+    verificar('Te importa que el ba\xF1\o tenga buena infraestructura (que el piso y los asientos no esten rotos)'),
+    verificar('Te importa que el ba\xF1\o tenga buenos insumos (papel de ba\xF1\o y jabon)'),
+    verificar('Estas cerca del modulo Z1'),
+    write('Te recomiendo ir al ba\xF1\o del modulo Z1.'), nl.
+
+bano_frente_al_modulo_v2 :-
+    verificar('Te importa que el ba\xF1\o este limpio'),
+    verificar('Te importa que el ba\xF1\o tenga buena infraestructura (que el piso y los asientos no esten rotos)'),
+    verificar('Te importa que el ba\xF1\o tenga buenos insumos (papel de ba\xF1\o y jabon)'),
+    verificar('Estas cerca del modulo V2'),
+    write('Te recomiendo ir al ba\xF1\o frente al modulo V2.'), nl.
+
+bano_modulo_v :-
+    verificar('Te importa que el ba\xF1\o tenga buenos insumos (papel de ba\xF1\o y jabon)'),
+    verificar('Estas cerca del modulo V'),
+    write('Te recomiendo ir al ba\xF1\o del modulo V.'), nl.
+
+bano_modulo_x_abajo :-
+    verificar('Te importa que el ba\xF1\o este limpio'),
+    verificar('Te importa la disponibilidad (si normalmente esta abierto)'),
+    verificar('Estas cerca del modulo X'),
+    write('Te recomiendo ir al ba\xF1\o del modulo X abajo.'), nl.
+
+bano_modulo_x_arriba :-
+    verificar('Te importa que el ba\xF1\o tenga buenos insumos (papel de ba\xF1\o y jabon)'),
+    verificar('Te importa la disponibilidad (si normalmente esta abierto)'),
+    verificar('Estas cerca del modulo X'),
+    write('Te recomiendo ir al ba\xF1\o del modulo X arriba.'), nl.
 
 haste_aqui_mismo :-
     write('Lo siento no hay ningun ba\xF1\os que cumpla tus estandares, recomendamos hacerte aqui mismo o bajar tus estandares'), nl.
