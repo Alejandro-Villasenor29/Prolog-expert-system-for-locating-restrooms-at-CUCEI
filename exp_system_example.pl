@@ -10,23 +10,34 @@ iniciar:-
     cerrar.
 
 % Ba\xF1\os
-analisis(bano_modulo_alfa)                    :- bano_modulo_alfa, !.
-analisis(bano_modulo_beta)                    :- bano_modulo_beta, !.
-analisis(bano_biblioteca)                     :- bano_biblioteca, !.
-analisis(bano_auditorio_enrique_diaz_de_leon) :- bano_auditorio_enrique_diaz_de_leon, !.
-analisis(bano_proulex_A_mano_derecha)         :- bano_proulex_A_mano_derecha, !.
-analisis(bano_auditorio_antonio_rodriguez)    :- bano_auditorio_antonio_rodriguez, !.
-analisis(bano_mano_derecha_modulo_e)          :- bano_mano_derecha_modulo_e, !.
-analisis(bano_modulo_i)                       :- bano_modulo_i, !.
-analisis(bano_modulo_o)                       :- bano_modulo_o, !.
-analisis(bano_modulo_y)                       :- bano_modulo_y, !.
-analisis(bano_modulo_z)                       :- bano_modulo_z, !.
-analisis(bano_modulo_z1)                      :- bano_modulo_z1, !.
-analisis(bano_frente_al_modulo_v2)            :- bano_frente_al_modulo_v2, !.
-analisis(bano_modulo_v)                       :- bano_modulo_v, !.
-analisis(bano_modulo_x_abajo)                 :- bano_modulo_x_abajo, !.
-analisis(bano_modulo_x_arriba)                :- bano_modulo_x_arriba, !.
-analisis(haste_aqui_mismo)                    :- haste_aqui_mismo, !.
+analisis(bano_modulo_alfa)                     :- bano_modulo_alfa, !.
+analisis(bano_modulo_beta)                     :- bano_modulo_beta, !.
+analisis(bano_biblioteca)                      :- bano_biblioteca, !.
+analisis(bano_auditorio_enrique_diaz_de_leon)  :- bano_auditorio_enrique_diaz_de_leon, !.
+analisis(bano_proulex_A_mano_derecha)          :- bano_proulex_A_mano_derecha, !.
+analisis(bano_auditorio_antonio_rodriguez)     :- bano_auditorio_antonio_rodriguez, !.
+analisis(bano_mano_derecha_modulo_e)           :- bano_mano_derecha_modulo_e, !.
+analisis(bano_modulo_i)                        :- bano_modulo_i, !.
+analisis(bano_modulo_o)                        :- bano_modulo_o, !.
+analisis(bano_modulo_y)                        :- bano_modulo_y, !.
+analisis(bano_modulo_z)                        :- bano_modulo_z, !.
+analisis(bano_modulo_z1)                       :- bano_modulo_z1, !.
+analisis(bano_frente_al_modulo_v2)             :- bano_frente_al_modulo_v2, !.
+analisis(bano_modulo_v)                        :- bano_modulo_v, !.
+analisis(bano_modulo_x_abajo)                  :- bano_modulo_x_abajo, !.
+analisis(bano_modulo_x_arriba)                 :- bano_modulo_x_arriba, !.
+
+% --- ZONA ULISES---
+analisis(bano_modulo_m)                        :- bano_modulo_m, !.
+analisis(bano_modulo_n)                        :- bano_modulo_n, !.
+analisis(bano_modulo_p)                        :- bano_modulo_p, !.
+analisis(bano_entre_p_y_q)                     :- bano_entre_p_y_q, !.
+analisis(bano_modulo_q_edificio)               :- bano_modulo_q_edificio, !.
+analisis(bano_modulo_r)                        :- bano_modulo_r, !.
+analisis(bano_modulo_t)                        :- bano_modulo_t, !.
+analisis(bano_modulo_u)                        :- bano_modulo_u, !.
+
+analisis(haste_aqui_mismo)                     :- haste_aqui_mismo, !.
 
 % Reglas de identificación
 bano_modulo_alfa :-
@@ -99,7 +110,7 @@ bano_modulo_z :-
     verificar('Te importa la disponibilidad (si normalmente esta abierto)'),
     verificar('Estas cerca del modulo Z'),
     write('Te recomiendo ir al ba\xF1\o del modulo Z.'), nl.
-    
+
 bano_modulo_z1 :-
     verificar('Te importa que el ba\xF1\o este limpio'),
     verificar('Te importa que el ba\xF1\o tenga buena infraestructura (que el piso y los asientos no esten rotos)'),
@@ -131,19 +142,61 @@ bano_modulo_x_arriba :-
     verificar('Estas cerca del modulo X'),
     write('Te recomiendo ir al ba\xF1\o del modulo X arriba.'), nl.
 
+% --- REGLAS ULISES---
+bano_modulo_m :-
+    verificar('Te importa que el ba\xF1\o este limpio'),
+    verificar('Estas cerca del modulo M'),
+    write('Te recomiendo ir al ba\xF1\o del modulo M.'), nl.
+
+bano_modulo_n :-
+    verificar('Te importa que el ba\xF1\o este limpio'),
+    verificar('Estas cerca del modulo N o de la lonaria del N'),
+    write('Te recomiendo ir al ba\xF1\o del modulo N.'), nl.
+
+bano_modulo_p :-
+    verificar('Te importa la disponibilidad (si normalmente esta abierto)'),
+    verificar('Estas cerca del modulo P'),
+    write('Te recomiendo ir al ba\xF1\o del modulo P.'), nl.
+
+bano_entre_p_y_q :-
+    verificar('Te importa la disponibilidad (si normalmente esta abierto)'),
+    verificar('Estas cerca entre el modulo P y el modulo Q'),
+    write('Te recomiendo ir al ba\xF1\o exterior que esta justo entre el modulo P y el Q.'), nl.
+
+bano_modulo_q_edificio :-
+    verificar('Te importa que el ba\xF1\o este limpio'),
+    verificar('Te importa que el ba\xF1\o tenga buena infraestructura (que el piso y los asientos no esten rotos)'),
+    verificar('Estas cerca del modulo Q'),
+    write('Te recomiendo ir al ba\xF1\o que esta dentro del edificio del modulo Q.'), nl.
+
+bano_modulo_r :-
+    verificar('Te importa que el ba\xF1\o tenga buenos insumos (papel de ba\xF1\o y jabon)'),
+    verificar('Estas cerca del modulo R'),
+    write('Te recomiendo ir al ba\xF1\o del modulo R.'), nl.
+
+bano_modulo_t :-
+    verificar('Te importa la disponibilidad (si normalmente esta abierto)'),
+    verificar('Estas cerca del modulo T'),
+    write('Te recomiendo ir al ba\xF1\o del modulo T.'), nl.
+
+bano_modulo_u :-
+    verificar('Te importa que el ba\xF1\o este limpio'),
+    verificar('Te importa que el ba\xF1\o tenga buena infraestructura (que el piso y los asientos no esten rotos)'),
+    verificar('Estas cerca del modulo U o del gimnasio'),
+    write('Te recomiendo ir al ba\xF1\o del modulo U.'), nl.
+
 haste_aqui_mismo :-
     write('Lo siento no hay ningun ba\xF1\os que cumpla tus estandares, recomendamos hacerte aqui mismo o bajar tus estandares'), nl.
 
 % Reglas de preguntas y verificación
 preguntar(Requisitos):-
-    %write('Te importa alguna de las siguientes cosas a la hora de decidir si quieres ir al ba\xF1\os '), 
     write(Requisitos), write('?'), nl,
     read(Respuesta), nl,
     ((Respuesta == si; Respuesta == s) -> assertz(si(Requisitos)); assertz(no(Requisitos)), fail).
 
 verificar(Requisitos):-
     (si(Requisitos) -> true; (no(Requisitos) -> fail; preguntar(Requisitos))).
-    
+
 % Cierre del sistema
 cerrar :- retract(si(_)), fail.
 cerrar :- retract(no(_)), fail.
